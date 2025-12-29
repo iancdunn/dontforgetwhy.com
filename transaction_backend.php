@@ -3,7 +3,6 @@ session_start();
 include('db.php');
 
 if (isset($_POST['transSubmit'])) {
-    //Variable initialization
     $username = $_SESSION['user'];
     $needsPrcnt = $_SESSION['needsPercent'];
     $savingsPrcnt = $_SESSION['savingsPercent'];
@@ -31,7 +30,6 @@ if (isset($_POST['transSubmit'])) {
     }
     else{
         if($_POST['transType'] == "withdraw"){
-            //Checks if the user has enough money in their selected budget category to make a withdrawal
             if(($transAmt > $needsBal && $_POST['withdrawType'] == "needs") || ($transAmt > $savingsBal && 
             $_POST['withdrawType'] == "savings") || ($transAmt > $investBal && $_POST['withdrawType'] == 
             "invest") || ($transAmt > $wantsBal && $_POST['withdrawType'] == "wants")){
@@ -39,7 +37,6 @@ if (isset($_POST['transSubmit'])) {
                 exit();
             }
             else{
-                //Subtracts transaction amount from the selected budget category and the total
                 $transAmt = $transAmt * -1;
                 $totalBal = $totalBal + $transAmt;
                 if($_POST['withdrawType'] == "needs"){
@@ -57,7 +54,6 @@ if (isset($_POST['transSubmit'])) {
             }
         }
         else{
-            //Calculates how much will be added for each category then updates the balance values
             $addedNeeds = $transAmt * $needsPrcnt / 100;
             $addedSavings = $transAmt * $savingsPrcnt / 100;
             $addedInvest = $transAmt * $investPrcnt / 100;
@@ -79,7 +75,6 @@ if (isset($_POST['transSubmit'])) {
             }
         }
 
-        //Parameterized query to ensure safely bounded data
         $stmt = $pdo->prepare("UPDATE users SET 
             totalBal = :totalBal, 
             needsBal = :needsBal, 
