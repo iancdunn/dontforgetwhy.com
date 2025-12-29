@@ -12,6 +12,14 @@ The project emphasizes backend logic integrity, handling floating-point arithmet
 * **Math Precision:** Implements a custom algorithm in `transaction_backend.php` to correct floating-point rounding errors that occur when splitting currency across multiple percentages.
 * **Secure Authentication:** Utilizes PHP sessions and `password_hash()`/`password_verify()` for secure user access.
 
+## Responsive Design
+
+The application implements a fully responsive user interface optimized for cross-device compatibility.
+
+* **Adaptive Navigation:** Utilizes **CSS Media Queries** (`@media`) to dynamically transform the navigation bar from a horizontal desktop layout to a vertical, touch-friendly stack on mobile devices (<768px).
+* **Fluid Layouts:** Implements **Flexbox** and fluid percentages to ensure forms and data tables scale perfectly from large monitors down to smartphone screens without horizontal scrolling.
+* **Viewport Optimization:** Configured with proper viewport meta tags to ensure accurate scaling and readability on high-density (Retina) mobile displays.
+
 ## Tech Stack
 
 * **Backend:** PHP 8.x
