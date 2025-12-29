@@ -9,7 +9,6 @@ function validate_input($data){
 if (isset($_POST['signup'])){
 	include ('db.php');
 
-	//Cleans up username and password data
 	$username = validate_input($_POST['username']);
 	$password = validate_input($_POST['password']);
 
@@ -19,10 +18,10 @@ if (isset($_POST['signup'])){
 		header("Location: signup.php?error=Password is required");
 	}else {
         $stmt = $pdo->query("SELECT * FROM users WHERE user='$username'");
+		
         if($stmt->rowCount() > 0){
 		    header("Location: signup.php?error=This username has already been taken by another account");
         }else {
-			//Hashes the password and adds the username and password to the database
         	$password = password_hash($password, PASSWORD_DEFAULT);
 	        $stmt = $pdo->prepare("INSERT INTO users(user, pass) VALUES ('$username', '$password')");
 	        $stmt->execute();
