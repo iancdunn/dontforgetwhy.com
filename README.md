@@ -1,6 +1,6 @@
 # DontForgetWhy (DFY) - Intentional Finance Tracker
 
-A LAMP-stack personal finance application designed to enforce intentional capital allocation. Unlike standard expense trackers, this tool uses a **Zero-Based Budgeting** algorithm to automatically split every deposit into four strategic buckets: *Needs*, *Wants*, *Savings* (Liquidity), and *Investments* (Growth).
+A LAMP-stack personal finance application designed to enforce intentional capital allocation. Unlike standard expense trackers, this tool uses a **Zero-Based Budgeting** algorithm to automatically split every deposit into four strategic buckets: *Needs*, *Wants*, *Savings*, and *Investments*.
 
 The project emphasizes backend logic integrity, handling floating-point arithmetic precision and strict session-based security for financial data.
 
