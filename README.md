@@ -1,4 +1,4 @@
-# dontforgetwhy - Intentional Financial Engine
+# dontforgetwhy - Intentional Finance Application
 
 A LAMP-stack personal finance application designed to enforce intentional capital allocation. Unlike standard expense trackers, this tool uses a **Zero-Based Budgeting** algorithm to automatically split every deposit into four strategic buckets: *Needs*, *Wants*, *Savings*, and *Investments*.
 
